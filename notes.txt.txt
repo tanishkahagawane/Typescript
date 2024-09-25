@@ -1,0 +1,24 @@
+Typescript -
+Typescript is a superset to javascript.
+Typescript add mode features to js.
+its not a library
+it adds static typing to js, Js on its own is dynamically typed
+
+Installation-
+npm install -g typescript
+
+typescript does not run in browser , therefore we need to compile typescript to javascript
+during that typescript annotation will be removed
+
+to invoke compiler-
+npx tsc   // thorws error as it expects a file to compile
+
+npx tsc with-typescript.ts
+with-typescript.ts:5:22 - error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+
+5   const result = add('2', '5');  //error
+
+Even if we gets erro it still completes and give a js file  - with-typescript.js
+
+NOW,if continue working with ts file , we protect ourself from error
+/////////////////////////////////////////////////////////////////////////////
