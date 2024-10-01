@@ -22,3 +22,16 @@ Even if we gets erro it still completes and give a js file  - with-typescript.js
 
 NOW,if continue working with ts file , we protect ourself from error
 /////////////////////////////////////////////////////////////////////////////
+TypeScript Generics allow you to create reusable components and functions that work with various types while maintaining type safety. They use type parameters (like <T>) to enable flexibility, ensuring that code can adapt to different data types without losing type checks.
+
+function identity<T>(arg: T): T {
+    return arg;
+}
+
+// Usage
+const stringOutput = identity("Hello, World!"); // T is inferred as string
+const numberOutput = identity(42); // T is inferred as number
+
+////////////////////////////////////////////////////////////////////////////
+
+npx create-react-app my-app --template typescript
