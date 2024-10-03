@@ -35,3 +35,10 @@ const numberOutput = identity(42); // T is inferred as number
 ////////////////////////////////////////////////////////////////////////////
 
 npx create-react-app my-app --template typescript
+
+/////////////////////////////////////////////////
+In TypeScript, React.FC (or React.FunctionComponent) is a type provided by the React library for defining functional components. It helps ensure that your component adheres to the expected structure and includes features like prop types, default props, and context types.
+Key Features of React.FC
+Type Checking: It automatically infers the types of props, ensuring type safety.
+Children Prop: By default, it includes children as a prop, allowing you to easily pass children elements.
+Return Type: It specifies that the component should return a React element.
