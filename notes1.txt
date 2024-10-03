@@ -1,0 +1,89 @@
+TYPESCRIPT
+- Ts is an enhanced version of javascript
+- TS is superset of javascript
+- TS is building on JS.
+-  But TS can not run on the browser directly
+-  TS compiler converts the code from Typescript to javascript
+
+TYPESCRIPT BENEFIT
+- Check Error on Compile Time
+- Add type like string , number , bool etc
+- We can add Object-Oriented Way with TS
+- Code is well Managed
+
+Example-
+
+function add(num1,num2){
+    return num1+num2
+}
+console.log(add("2","3"));
+
+Version and History
+-DEveloped by Microsoft
+-Current Version : 5.6.2
+-First Release: 1-oct-2012
+-Influenced by: Javascript
+
+npm install -g typescript
+
+tsc -v
+
+/////////////////////
+interview q - 
+1.Can we compile multiple TS files into a single JS file?
+Yes, you can compile multiple TypeScript files into a single 
+JavaScript file by using the --outFile option with the TypeScript compiler (tsc). This combines the output into one file.
+
+tsc --outFile output.js file1.ts file2.ts file3.ts
+
+Use Case: This is particularly useful for simpler projects or when you want to minimize the number of HTTP requests by serving a single JavaScript file
+
+2.Can we directly run TS files in the browser?
+No, you cannot directly run TypeScript files in the browser.
+TypeScript needs to be transpiled to JavaScript first, as browsers only understand JavaScript.
+You can use tools like Babel or TypeScript's own compiler to do this.
+
+tsc file.ts
+This will generate a file.js that you can include in your HTML.
+
+Development Alternatives:
+
+There are tools like Webpack, Parcel, or Babel that can handle the TypeScript to JavaScript transpilation and also bundle multiple files together.
+
+IF TRY IT , It throws Error
+Refused to execute script from 
+'file:/Typescript/3_basics/app.ts' because its MIME type ('video/vnd.dlna.mpeg-tts') is not executable.
+
+///////////////////////////////////////////////////////////////
+overview of core data types in TypeScript:
+
+Number: Represents integers and floating-point numbers.
+Example: let age: number = 30;
+
+String: Represents text. Can use single, double quotes, or backticks.
+Example: let name: string = "Alice";
+
+Boolean: Represents true or false.
+Example: let isActive: boolean = true;
+
+Array: Represents a collection of items of the same type.
+Example: let numbers: number[] = [1, 2, 3];
+
+Tuple: Represents an array with fixed size and specific types.
+Example: let person: [string, number] = ["Alice", 30];
+
+Enum: A set of named constants.
+Example: enum Color { Red, Green, Blue }
+
+Any: Represents any value, useful for dynamic typing.
+Example: let randomValue: any = 42;
+
+Void: Represents no value, typically used for function returns.
+Example: function logMessage(message: string): void { console.log(message); }
+
+Null and Undefined: Represents the absence of value.
+Example: let nullableValue: null = null;
+
+Never: Represents values that never occur, used for functions that throw errors.
+Example: function error(message: string): never { throw new Error(message); }
+/////////////////////////////////////////////////////////
