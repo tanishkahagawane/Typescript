@@ -42,3 +42,5 @@ Key Features of React.FC
 Type Checking: It automatically infers the types of props, ensuring type safety.
 Children Prop: By default, it includes children as a prop, allowing you to easily pass children elements.
 Return Type: It specifies that the component should return a React element.
+
+////////////////////////////////////////////////////
