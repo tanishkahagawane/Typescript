@@ -44,3 +44,119 @@ Children Prop: By default, it includes children as a prop, allowing you to easil
 Return Type: It specifies that the component should return a React element.
 
 ////////////////////////////////////////////////////
+Type Inference
+
+Type inference in TypeScript allows the compiler to automatically deduce types based on context, reducing the need for explicit type annotations.
+
+let num = 42; // inferred as number
+////////
+let data ="hello"
+data=10 //error
+////////
+let mydata;
+//bydefault its type will be any
+mydata="abc"
+mydata=true
+mydata=11
+//////////////
+let data:5 // will store only 5 as type is 5
+data=5 
+data=10 //error
+///////////
+
+let data =10 ; //number
+const val=10   //10  //WHy??
+
+data=20
+val=30
+//as dara value can be chnaged here but const val will remain 10 only
+////////////////////////////////////////////////
+Core Typescript
+1.number
+2.string
+3.Boolean
+///////////////////////////////////
+Object Type in typescript
+
+const person:{name:string,age:number,email:string}={
+    name:'tanishka',
+    age:23,
+    email:"abc@test.com"
+}
+console.log(person.name)
+////////////////////////////////////
+ArrayType 
+
+let arr:string[]=['js','ts','node']
+
+let arr1:[string,number,true]=['js',1,true]
+
+//user this -
+let arr2:any[]=['js',1,true]
+
+Arrays
+Definition: Arrays are ordered collections of elements that can hold multiple values of the same type.
+Syntax: Defined using brackets [], e.g., let arr: number[] = [1, 2, 3];.
+Homogeneous: Typically, all elements are of the same type, but TypeScript allows heterogeneous arrays (though this is less common).
+Dynamic Size: Arrays can grow or shrink in size.
+Access: Elements are accessed using their index (zero-based).
+///////////////////////////////
+Tuple type
+
+let role:[string,string,number,number,boolean?]=['admin','manager',1,3];
+role.push(true);
+role[1]="user";
+
+Tuples
+Definition: Tuples are fixed-length arrays that can hold a specific number of elements, each of which can be of different types.
+Syntax: Defined using square brackets with specific types for each position, e.g., let tuple: [string, number] = ['hello', 42];.
+Heterogeneous: Each element can be of a different type, and the order matters.
+Fixed Size: Tuples have a defined length, and the number of elements is static.
+Access: Elements are accessed using their index, just like arrays.
+/////////////////////////////
+enumType
+- A group of constant
+- That can assign a number to your string and make an easy comparison.
+- enum Role(values)
+////////////////////////////////
+Any 
+
+any is a special type that allows you to bypass type checking. It can hold a value of any type, making it very flexible but also potentially risky. Here are some key points:
+
+Key Features of any
+Flexible: Can store values of any type (string, number, object, etc.).
+No Type Safety: TypeScript does not perform type checking on any, which can lead to runtime errors.
+Use Cases: Useful when you're unsure of the type or when working with third-party libraries.
+Example
+typescript
+Copy code
+let value: any;
+
+value = 42;          // number
+value = "hello";    // string
+value = [1, 2, 3];  // array
+value = { key: "value" }; // object
+Caution
+While any provides flexibility, it undermines the type safety that TypeScript offers. It's often better to use more specific types or to define your own types/interfaces when possible.
+
+//////////////////////////////////////////
+Union
+Union type descibes a value that can be one of several types
+
+function printId(id: string | number): void {
+    console.log(`ID: ${id}`);
+}
+
+// Usage
+printId("abc123"); // valid
+printId(456);      // valid
+////////////////////////////////
+Which one should be preferred ?Any or Union
+
+
+Prefer Union Types Over any
+Type Safety: Catches errors at compile time.
+Clarity: Makes expected types explicit.
+Better Tooling: Enhances autocompletion.
+//////////////////////////////
+
