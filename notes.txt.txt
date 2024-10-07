@@ -164,4 +164,66 @@ Apply values rather than apply types to a variable or parameter
 
 let data:string | number ="hello"
 let Data:"abc" | 123 ="abc"
+////////////////////////////
+Type Alias 
+define type like a variable and resue it
+1.Type Alias with variable
+2.Type Alias with function params
 
+type vartype = string | number | undefined;
+let a:vartype = 10
+let b:vartype = 20
+let c:vartype = undefined
+////////////////////////////////////
+Function Type
+
+// Function type with parameters and return type
+type AddFunction = (a: number, b: number) => number;
+
+// Example implementation
+const add: AddFunction = (x, y) => x + y;
+
+const result = add(5, 10); // result is 15
+//////////////////////////////////////////
+void
+
+In TypeScript, void is a special type that represents the absence of a value. It is commonly used in function return types to indicate that the function does not return anything.
+
+function printData():void{
+    console.log("Hello !!");
+}
+
+/////////////////////////////////////////
+Unknown type
+
+In TypeScript, unknown is a type that represents any value but is safer than any. You can assign any value to an unknown type, but before performing operations on it, you must assert or narrow its type. This makes it useful for situations where you want to ensure type safety while still accepting any value.
+
+let value: unknown;
+
+value = 42; // valid
+value = "Hello"; // valid
+
+// Cannot do this directly
+// const length = value.length; // Error: Object is of type 'unknown'.
+
+// Need to narrow the type first
+if (typeof value === 'string') {
+    const length = value.length; // Now it's safe
+}
+
+////////////////////////////////////////////////
+any vs unknown:
+
+any: Disables type checking. You can use it without any restrictions, which can lead to runtime errors.
+
+let value: any;
+const length = value.length; // No error, but unsafe.
+
+unknown: Requires type checks before use, promoting safer code.
+
+let value: unknown;
+if (typeof value === 'string') {
+    const length = value.length; // Safe.
+}
+/////////////////////////////////////////////
+Never type
