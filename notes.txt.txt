@@ -159,4 +159,9 @@ Type Safety: Catches errors at compile time.
 Clarity: Makes expected types explicit.
 Better Tooling: Enhances autocompletion.
 //////////////////////////////
+Literal Type
+Apply values rather than apply types to a variable or parameter
+
+let data:string | number ="hello"
+let Data:"abc" | 123 ="abc"
 
