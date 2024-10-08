@@ -227,3 +227,157 @@ if (typeof value === 'string') {
 }
 /////////////////////////////////////////////
 Never type
+
+The never type represents the type of values that never occur. 
+
+////////////////////////////////////////
+Compile and muiltple files
+
+tsc --watch
+/////////////////////////////////////
+To exclude file while compiling
+
+tsc --init
+in tsconfig.json-
+
+"exclude":[
+    "file.ts"
+]
+
+to exclude folder - 
+
+"exclude":[
+    "foldername",
+    "foldername/test.ts",
+    "*/test1.ts"
+]
+
+to include-
+
+"include":[
+    "file.ts"
+]
+///////////////////////////////
+Target Configuration
+
+In TypeScript, the target configuration determines which version of JavaScript your TypeScript code will be compiled to. This is specified in the tsconfig.json file under the compilerOptions section.
+
+"target": "es2016",  
+////////////////////////////////
+rootDir and outDir
+Use rootDir to define where your TypeScript source files are located. This helps with organization and prevents stray TypeScript files from being compiled.
+Use outDir to define where the compiled output should go. This helps keep your source code separate from the generated files, making it easier to manage your project.
+
+ "outDir": "./", 
+
+ ///////////////////////////////////////
+ Code Quality Imporovemet parameters
+
+    1."noUnusedLocals": true,                           /* Enable error reporting when local variables aren't read. */
+   
+   function  apply(){
+    let item=10; //error
+    return true
+   }
+    apple();
+////////////////////////
+    2. "noUnusedParameters": true,                       /* Raise an error when a function parameter isn't read. */
+   
+    function  apply(data){ //waring
+    let a=10; //error
+    return true
+   }
+    apple('fruit');
+ ///////////////////////////   
+    3. "noImplicitReturns": true,                        /* Enable error reporting for codepaths that do not explicitly return in a function. */
+    
+    function  apply(data:string | number){ //waring
+        let a=10; //error
+        if(data==20){
+            return true
+        }else{
+            console.log('else')
+        }
+   }
+    apple('fruit');
+/////////////////////////////
+    4."noFallthroughCasesInSwitch": true,               /* Enable error reporting for fallthrough cases in switch statements. */
+    
+    function  apply(data:string){ //waring
+        switch(data){
+            case "fruit":    //waring since break is not there
+                console.log("fruit");
+            case "color":
+                console.log("color");
+        }
+   }
+    apple('fruit');
+    
+/////////////////////////////////////////////////////////
+Class in Typescript
+- A class is a user-defined type that describes what a certain type of 
+
+
+class Users{
+    name:'';
+    email:'';
+
+    addUser(user){
+        return `${user} is Added`
+    }
+    removeUser(user){
+        console.log(`${user} removed `)
+    }
+}
+let User1 = new Users;
+let result= User1.addUser('Anil');
+console.log(result)
+User1.removeUser('Peter');
+
+
+/////////////////////////////////////////////
+Class Compilation with ES5 and es2016
+
+ES5:
+
+Transpiled to constructor functions and prototype methods.
+No native class support; uses function syntax.
+Example:
+
+typescript
+Copy code
+class Animal {
+  constructor(public name: string) {}
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+Compiles to:
+
+javascript
+Copy code
+var Animal = function(name) { this.name = name; };
+Animal.prototype.speak = function() { console.log(this.name + " makes a noise."); };
+ES2016:
+
+Directly uses native class syntax.
+Cleaner, more concise compilation.
+Compiles to:
+
+javascript
+Copy code
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+Summary
+ES5: Transformed to function syntax.
+ES2016: Uses native class syntax.
+
+//////////////////////////////////////////
+
+
